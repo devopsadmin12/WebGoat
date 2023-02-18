@@ -55,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/mail/**", "/requests/**").authenticated()
                 .antMatchers("/files").authenticated()
                 .anyRequest().permitAll();
-        security.and().csrf().disable().formLogin()
+        security.and().csrf().formLogin()
                 .loginPage("/login").failureUrl("/login?error=true");
         security.and()
                 .formLogin()
